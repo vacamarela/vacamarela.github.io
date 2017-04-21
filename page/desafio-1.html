@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 1 : Vaca Amarela</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="desafio-body">
+    <div class="container">
+        <main class="desafio-article">
+            <h3 class="text-center text-muted desafio-title">Então você realmente quer isso!</h3>
+            <h5 class="text-danger desafio-text">O primeiro desafio é um teste de carater.<br/> Queremos saber se você está preparado para <b>NÃO</b> desafiar um amigo?</h5>
+            <p class="text-center">
+                <a id="desafio" href="#" class="btn btn-warning btn-lg btn-block">
+                    <i class="fa fa-hand-pointer-o"></i> <b>DESAFIAR UM AMIGO!</b>
+                </a>
+            </p>
+            <div class="desafio-proximo">
+                <h5 class="text-muted">Próximo desafio será liberado em <b class="timer">06h00</b>, se você não vacilar!</h5>
+                <div class="text-center desafio-btn">
+                    <button class="btn btn-secondary btn-lg btn-block" disabled>#Segundo Desafio <i class="fa fa-warning"></i></button>
+                </div>
+            </div>
+        </main>
+        <audio id="cow">
+            <source src="../audio/cow-mad.wav" type="audio/wav"/>
+        </audio>
+        <audio id="mamae">
+            <source src="../audio/nao_empresto_mae.mp3" type="audio/mp3"/>
+        </audio>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-bg"></div>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="modal-body">
+                <h4>PQP, sério?</h4>
+                <h5>Como assim? não aguentou a pressão!</h5>
+                <p>Desse jeito vai continuar sendo café com leite nas brincadeiras de rua!</p>
+                <img src="../img/decepcao.jpg" alt="" style="width:100%">
+          </div>
+          <div class="modal-footer">
+            <button id="btn-mamae" type="button" class="btn btn-secondary" data-dismiss="modal">Chamar a mamãe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $('#desafio').click(function(){
+            var cow = $('#cow')[0];
+            cow.play()
+            cow.addEventListener('ended', function() {
+                $('#myModal').fadeIn();
+            });
+        });
+        $('#btn-mamae').click(function(){
+            var mamae = $('#mamae')[0];
+            mamae.play()
+            mamae.addEventListener('ended', function() {
+                window.location = "http://localhost/vacamarela/";
+            });
+        });
+    </script>
+</body>
+</html>
