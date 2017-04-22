@@ -1,4 +1,4 @@
-.banner {
+.dark-bg {
     background-color: #444;
 }
 .banner img {
@@ -6,9 +6,6 @@
 }
 p {
     margin: 15px 0px 30px 0px;
-}
-.desafio-body{
-    background-color: #444;
 }
 .desafio-article {
     margin: 30px 0px;
